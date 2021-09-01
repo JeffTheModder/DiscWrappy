@@ -3,6 +3,7 @@ import websocket
 import threading
 import time
 import requests
+import utils
 
 class Client:
     def __init__(self):
@@ -62,6 +63,7 @@ class Client:
         def inner(func):
             while self.running:
                 event = self.recieve_json_response(self.ws)
-                if event["t"] == eventType:
-                    func(event)
+                event = utils.DictX(event)
+                if event.t == eventType:
+                    func(utils.DictX(event.d))
         return inner

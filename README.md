@@ -17,5 +17,5 @@ client.run(TOKEN)
 > ```py
 > @client.on("MESSAGE_CREATE")
 > def printMessageContent(message):
->     print(message["d"]["content"])
+>     print(message.content)
 > ```
