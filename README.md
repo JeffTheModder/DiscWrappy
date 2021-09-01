@@ -13,7 +13,7 @@ client.run(TOKEN)
 ### **Commands:**
 **`@Client.on()`:**
   * **Params:**
-    * **event_type -** The type of event you're waiting for
+    * **(event_type)[/events.md] -** The type of event you're waiting for
 > ```py
 > @client.on("MESSAGE_CREATE")
 > def printMessageContent(message):
