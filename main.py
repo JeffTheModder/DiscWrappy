@@ -1,6 +1,6 @@
-import connect
+import discwrappy
 
-client = connect.Client()
+client = discwrappy.Client()
 
 client.run("ODgyNzE4NDQ4MzczODcwNjYy.YS_dng.wbInPOY5VU5OC10pbIQFrFuzvwk", "hi")
 
