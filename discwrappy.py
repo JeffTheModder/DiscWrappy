@@ -8,7 +8,8 @@ import utils
 class Client:
     def __init__(self):
         self.ws = websocket.create_connection("wss://gateway.discord.gg/?v=9&encoding=json")
-
+        self.api_base_url = "https://discord.com/api/v9"
+        
         event = self.recieve_json_response(self.ws)
 
         heartbeat_interval = event["d"]["heartbeat_interval"]
