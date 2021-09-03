@@ -3,7 +3,7 @@ setup(
     name = 'discwrappy',
     packages = ['discwrappy'],
     version = '0.1-alpha',
-    license = 'GPL-3.0',
+    license = 'GPLv3',
     description = 'A Python wrapper for the Discord API',
     author = 'Jeff Morris',
     author_email = 'jeffreyjr.morris@gmail.com',
