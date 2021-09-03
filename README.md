@@ -19,3 +19,12 @@ client.run(TOKEN)
 > def printMessageContent(message):
 >     print(message.content)
 > ```
+**`@Client.send()`:**
+  * **Params:**
+    * **channel_id -** The channel you want to send the message to
+    * **message (JSON) -** The Mesage you want to send
+> ```py
+> @client.on("MESSAGE_CREATE")
+> def printMessageContent(message):
+>     client.send(message.channel_id, { "content": message.content})
+> ```
