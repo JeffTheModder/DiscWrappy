@@ -1,9 +1,15 @@
 from distutils.core import setup
+
+with open("README.md", "r", encoding="utf-8") as fh:
+    long_description = fh.read()
+
 setup(
     name = 'discwrappy',
     packages = ['discwrappy'],
     version = '0.1-alpha',
     description = 'A Python wrapper for the Discord API',
+    long_description = long_description,
+    long_description_content_type = "text/markdown",
     author = 'Jeff Morris',
     author_email = 'jeffreyjr.morris@gmail.com',
     url = 'https://github.com/JeffTheModder/DiscWrappy',
