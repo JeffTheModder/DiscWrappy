@@ -3,7 +3,7 @@ import websocket
 import threading
 import time
 import requests
-import utils
+from discwrappy.utils import DictX
 import base64
 
 class Client:
@@ -63,10 +63,10 @@ class Client:
         def inner(func):
             while self.running:
                 event = self.recieve_json_response(self.ws)
-                event = utils.DictX(event)
+                event = DictX(event)
                 if event.t == eventType:
                     if not(int(event.d["author"]["id"]) == self.bot_id):
-                        func(utils.DictX(event.d))
+                        func(DictX(event.d))
         return inner
 
     def send(self, channel_id, msgJSON):
