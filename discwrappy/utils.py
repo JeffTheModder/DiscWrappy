@@ -1,4 +1,9 @@
-class DictX(dict):
-    __getattr__ = dict.get
-    __setattr__ = dict.__setitem__
-    __delattr__ = dict.__delitem__
+import json
+
+def recieve_json_response(ws):
+    response = ws.recv()
+    if response:
+        return json.loads(response)
+
+def send_json_request(ws, request):
+    ws.send(json.dumps(request))
