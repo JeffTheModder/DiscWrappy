@@ -1,1 +1,2 @@
-from discwrappy.gateway import Client
+from .Gateway import *
+from .Objects import *
