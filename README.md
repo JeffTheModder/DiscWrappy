@@ -8,7 +8,7 @@ import discwrappy
 
 client = discwrappy.Client()
 
-\...
+...
 
 client.run(TOKEN)
 ```
@@ -24,6 +24,7 @@ client.run(TOKEN)
 > def onReady(ready):
 >     print("bot online")
 > ```
+
 **`Message.send() - function`:**
   * **Params:**
     * **message (dict) -** The Mesage you want to send
@@ -34,16 +35,19 @@ client.run(TOKEN)
 > def printMessageContent(message):
 >     message.send({ "content": message.content})
 > ```
+
 **`discwrappy.Message() - class`:**
   * **Params:**
     * **message (dict) -** The default Discord message dict
   * **Function:**
     * Turns given message dict into a "proper object" (keys can be access with dot notation), converts numeric ids to ints, and gives the message send functions
+
 **`discwrappy.User() - class`:**
   * **Params:**
     * **user (dict) -** The default Discord user dict
   * **Function:**
     * Turns given user dict into a "proper object" (keys can be access with dot notation) and converts numeric ids to ints
+
 **`discwrappy.GuildMember() - class`:**
   * **Params:**
     * **user (dict) -** The default Discord guild member dict
