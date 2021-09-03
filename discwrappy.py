@@ -4,6 +4,7 @@ import threading
 import time
 import requests
 import utils
+import base64
 
 class Client:
     def __init__(self):
@@ -36,6 +37,12 @@ class Client:
     
     def run(self, token, activity = ""):
         self.running = True
+        self.header = {
+            "Authorization": f"Bot {token}"
+        }
+        self.bot_id = token.split(".")[0]
+        self.bot_id = int(base64.b64decode(self.bot_id))
+
         payload = {
             "op": 2,
             "d": {
@@ -46,14 +53,6 @@ class Client:
                     "$browser": 'chrome',
                     "$device": 'pc',
                 },
-                "presence": {
-                    "activities": [{
-                        "name": activity,
-                        "type": 0
-                    }],
-                    "status": "online",
-                    "afk": False
-                }
             }
         }
 
@@ -66,5 +65,9 @@ class Client:
                 event = self.recieve_json_response(self.ws)
                 event = utils.DictX(event)
                 if event.t == eventType:
-                    func(utils.DictX(event.d))
+                    if not(int(event.d["author"]["id"]) == self.bot_id):
+                        func(utils.DictX(event.d))
         return inner
+
+    def send(self, channel_id, msgJSON):
+        requests.post(f"{self.api_base_url}/channels/{channel_id}/messages", json=msgJSON, headers=self.header)
