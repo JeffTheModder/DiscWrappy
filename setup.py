@@ -7,7 +7,7 @@ setup(
     author = 'Jeff Morris',
     author_email = 'jeffreyjr.morris@gmail.com',
     url = 'https://github.com/JeffTheModder/DiscWrappy',
-    download_url = 'https://github.com/JeffTheModder/DiscWrappy/archive/refs/tags/v_0.1-alpha.tar.gz',
+    download_url = 'https://github.com/JeffTheModder/DiscWrappy/archive/refs/tags/v_0.2-alpha.tar.gz',
     keywords = ['Discord', 'API', 'wrapper', 'python', 'library'],
     install_requires = [
         'requests',
