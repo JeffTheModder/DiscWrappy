@@ -3,7 +3,7 @@ from distutils.core import setup
 setup(
     name = 'discwrappy',
     packages = ['discwrappy'],
-    version = '0.3-alpha',
+    version = '0.4-alpha',
     description = 'A Python wrapper for the Discord API',
     author = 'Jeff Morris',
     author_email = 'jeffreyjr.morris@gmail.com',
@@ -15,13 +15,10 @@ setup(
         'websocket-client',
     ],
     classifiers = [
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 4 - Alpha',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
         'Topic :: Software Development :: Build Tools',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python'
     ],
 )
