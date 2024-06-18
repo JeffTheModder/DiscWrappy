@@ -26,7 +26,7 @@ class Client:
                 }
                 send_json_request(ws, heartbeatJSON)
 
-        threading._start_new_thread(heartbeat, (heartbeat_interval, self.ws, ))
+        threading._start_new_thread(heartbeat, (heartbeat_interval, self.ws))
     
     def run(self, token, activity = ""):
         self.header = {
